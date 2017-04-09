@@ -44,7 +44,11 @@ def get_addr(dest_addr , version):
 def main():
 	choose_version = None
 	remote_addr = sys.argv[1]
-	options, remainder = getopt.getopt(sys.argv[1:], '4:' , '')
+	try :
+		options, remainder = getopt.getopt(sys.argv[1:], '4:' , '')
+	except:
+		print("Invalid options. Please check.")
+		return
 
 	for opt, arg in options:
 		if opt == '-4':
